@@ -11,6 +11,9 @@ RUN wget -q https://downloads.apache.org/kafka/${KAFKA_VERSION}/kafka_${SCALA_VE
     rm /tmp/kafka.tgz && \
     mv /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} ${KAFKA_HOME}
 
+# find a way to add 127.0.0.1 as advertised listener to server.properties to be able to use localhost in application.properties
+
+
 EXPOSE 2181 9092
 
 CMD ${KAFKA_HOME}/bin/zookeeper-server-start.sh ${KAFKA_HOME}/config/zookeeper.properties & \
